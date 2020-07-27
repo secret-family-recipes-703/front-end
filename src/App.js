@@ -1,11 +1,23 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import PrivateRoute from './util/PrivateRoute'
+
 import './App.css';
+
+//Components Import
+import Login from './components/Login'
+import Register from './components/Register'
 
 function App() {
   return (
-    <div className="App">
-        <h1> Ambrosia! </h1>
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Register} />
+        {/* <PrivateRoute exact path="user" component={} />
+        <PrivateRoute exact path="dashboard" component={} /> */}
+        <Route exact path="login" component={Login} />
+      </div>
+    </Router>
   );
 }
 
