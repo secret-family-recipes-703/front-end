@@ -76,7 +76,7 @@ export default function Register() {
 			<h2> Register </h2>
 			<form onSubmit={formSubmit}>
 				<label htmlFor="username">
-					Userame&nbsp;
+					Username&nbsp;
 					<input
 						type="text"
 						name="username"
