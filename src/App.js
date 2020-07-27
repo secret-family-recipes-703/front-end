@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route exact path="/" component={Register} />
+        <Route exact path="/" component={Register} className="RegisterComponent" />
         {/* <PrivateRoute exact path="user" component={} />
         <PrivateRoute exact path="dashboard" component={} /> */}
         <Route exact path="login" component={Login} />
