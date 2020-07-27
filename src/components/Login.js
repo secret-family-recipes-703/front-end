@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {useHistory} from 'react-router-dom'
 import axios from "axios";
 import * as yup from "yup";
 
@@ -21,6 +22,7 @@ export default function Login() {
 	const [formValues, setFormValues] = useState(initialFormValues);
 	const [errors, setErrors] = useState(initialErrors);
 	const [buttonDisabled, setButtonDisabled] = useState(initialDisabled);
+	const {push} = useHistory()
 
 	useEffect(() => {
 		formSchema.isValid(formValues).then((valid) => {
@@ -53,6 +55,7 @@ export default function Login() {
 			.then((response) => {
 				console.log("success");
 				setFormValues(initialFormValues);
+				push('/placeholder')
 			})
 			.catch((error) => {
 				console.log(error.response);
