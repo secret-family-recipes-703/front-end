@@ -109,11 +109,14 @@ export default function Register() {
 						<p className="error">{errors.passwordConfirmation}</p>
 					) : null}
 				</label>
-				<br />
 				<button disabled={buttonDisabled} name="submit">
 					Submit
 				</button>
 			</form>
+			<br />
+			<br />
+			<br />
+			<a href='/login'>Already Registered?</a>
 		</div>
 	);
 }
