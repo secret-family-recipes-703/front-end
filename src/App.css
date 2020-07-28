@@ -19,3 +19,17 @@ body,
 input {
   margin: .25%;
 }
+
+img {
+  width:120px;
+}
+
+.addNew {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+ul {
+  padding: .5% 0%;
+}
