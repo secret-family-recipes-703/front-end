@@ -8,12 +8,8 @@ const formSchema = yup.object().shape({
   source: yup
     .string()
     .required("Image source is required"),
-//   ingredients: yup
-//     .string()
-//     .required("Ingredients are required"),
-//   instructions: yup
-//     .string(),
-    // .required('Instructions for your recipe is required'),
+  src: yup
+  .string(),  
   category: yup 
     .string()
     // .oneOf('pizza', 'lame')
