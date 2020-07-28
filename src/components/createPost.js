@@ -4,34 +4,29 @@ import * as yup from 'yup'
 import newRecipe from '../validation/newRecipe'
 import Form from './createPostForm'
 
-//with title, source, ingredients, instructions, and category), and edit or delete it later
 const initialFormValues = {
     title: '',
     source: '',
-    // ingredients: '',
-    // instructions: '',
-    category: ''
+    category: '',
+    src: ''
   }
   const initialFormErrors = {
     title: '',
     source: '',
-    // ingredients: '',
-    // instructions: '',
     category: '',
-
+    src: ''
   }
   const initialDisabled = true
 
 
 const CreatePost = (props) => {
-// export default function CreatePost(props){
     const [recipe, setRecipe] = useState([])
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors) 
     const [disabled, setDisabled] = useState(initialDisabled) 
 
 const postNewRecipe = newRecipe => {
-    axios.post('https://reqres.in/api/users', newRecipe)
+    axios.post('https://secret-family-recipes-703.herokuapp.com/api/recipes', newRecipe)
       .then(res => {
         setRecipe([res.data, ...recipe])
         setFormValues(initialFormValues)
@@ -64,19 +59,7 @@ const postNewRecipe = newRecipe => {
       [name]: value 
     })
   }
-
-//   const submit = evt => {
-//     evt.preventDefault()
-//     const newRecipe = {
-//       title: formValues.title.trim(),
-//       source: formValues.source.trim(),
-//       ingreadients: formValues.ingredients.trim(),
-//       instructions: formValues.instructions.trim(),
-//       category: formValues.category,
-//     }
-//     postNewRecipe(newRecipe)
-//   }
-  
+ 
   useEffect(() => {
     newRecipe.isValid(formValues).then(valid => {
       setDisabled(!valid)

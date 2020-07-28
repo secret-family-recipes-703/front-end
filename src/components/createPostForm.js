@@ -9,8 +9,6 @@ const submit = evt => {
     const newRecipe = {
       title: formValues.title.trim(),
       source: formValues.source.trim(),
-    //   ingreadients: formValues.ingredients.trim(),
-    //   instructions: formValues.instructions.trim(),
       category: formValues.category,
     }
     postNewRecipe(newRecipe)
@@ -29,20 +27,29 @@ const submit = evt => {
             <form onSubmit={submit}>
                 <label htmlFor='title'>
                     <input
-                    type='text'
-                    name='title'
-                    value={formValues.title}
-                    placeholder='Enter title of recipe'
-                    onChange={onInputChange}
+                        type='text'
+                        name='title'
+                        value={formValues.title}
+                        placeholder='Enter title of recipe'
+                        onChange={onInputChange}
                     ></input>
                 </label>
                 <label htmlFor='source'>
                     <input
-                    type='text'
-                    name='source'
-                    value={formValues.source}
-                    placeholder='Enter source of recipe'
-                    onChange={onInputChange}
+                        type='text'
+                        name='source'
+                        value={formValues.source}
+                        placeholder='Enter source of recipe'
+                        onChange={onInputChange}
+                    ></input>
+                </label>
+                <label htmlFor='imgSRC'>
+                    <input
+                        type='text'
+                        name='src'
+                        value={formValues.src}
+                        placeholder='Enter URL of image'
+                        onChange={onInputChange}
                     ></input>
                 </label>
                 {/* <label htmlFor='ingredients'>
@@ -65,9 +72,9 @@ const submit = evt => {
                 </label> */}
                 <label htmlFor='category'>
                     <select
-                    onChange={onInputChange}
-                    value={formValues.category}
-                    name='category'
+                        onChange={onInputChange}
+                        value={formValues.category}
+                        name='category'
                     >
                         <option value='' >Food category</option>
                         <option value='pizza' >Pizza</option>
