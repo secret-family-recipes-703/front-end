@@ -55,6 +55,7 @@ export default function Login() {
 			.then((response) => {
 				console.log("success");
 				setFormValues(initialFormValues);
+				localStorage.setItem('token', response.data.token);
 				push('/placeholder')
 			})
 			.catch((error) => {

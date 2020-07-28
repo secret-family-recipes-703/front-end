@@ -52,7 +52,10 @@ export default function Register() {
 	const formSubmit = (event) => {
 		event.preventDefault();
 		axios
-			.post("https://secret-family-recipes-703.herokuapp.com/api/users/register", formValues)
+			.post("https://secret-family-recipes-703.herokuapp.com/api/users/register", {
+				username: formValues.username, 
+				password: formValues.password
+			})
 			.then((response) => {
 				console.log("success");
 				setFormValues(initialFormValues);
