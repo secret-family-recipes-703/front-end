@@ -51,7 +51,7 @@ export default function Login() {
 	const formSubmit = (event) => {
 		event.preventDefault();
 		axios
-			.post("https://reqres.in/api/users", formValues)
+			.post("https://secret-family-recipes-703.herokuapp.com/api/users/login", formValues)
 			.then((response) => {
 				console.log("success");
 				setFormValues(initialFormValues);
