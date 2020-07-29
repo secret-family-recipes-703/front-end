@@ -1,0 +1,12 @@
+.recipeContainer{
+  display:flex;
+  width: 500px;
+  margin: 0% 39%;
+}
+
+.recipeCard{
+  display: block;
+  border: 1px black solid;
+  width: 350px;
+  text-align: center;
+}

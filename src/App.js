@@ -13,6 +13,7 @@ import RecipeForm from './components/createPostForm'
 
 function App() {
   const [recipes, addRecipes] = useState([''])
+  const [searchValue, setSearchValue] = useState('')
 
   return (
     <Router>
@@ -20,7 +21,7 @@ function App() {
         
         <Route exact path="/" component={Register} className="RegisterComponent" />
 
-        <RecipeContext.Provider value={{recipes, addRecipes}}>
+        <RecipeContext.Provider value={{recipes, addRecipes, searchValue, setSearchValue}}>
           <Route exact path="/login" component={Login} />
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/create" component={RecipeForm} />
