@@ -83,33 +83,36 @@ const Instructions = props => {
       }    
 
       return(
-        <ParentDiv>
-        <form onSubmit={submit}>
-          <h2>Add instructions!</h2>
-          <div id='notePad'>
-          {
-            steps.map((step, index) => {
-              return <NoteCard item={step} index={index}/>
-            })
-          }
-          </div>
-          <label htmlFor='instructions'>
-              <input
-                type='text'
-                name='instructions'
-                value={formValues.instructions}
-                placeholder='Enter a step'
-                onChange={onInputChange}
-              ></input>
-          </label>
-        <button  onClick={appendStep} id='appendBtn'>Add Step</button>
+      <ParentDiv>
+         <form onSubmit={submit}>
+           <h2>Add instructions!</h2>
+         <div id='notePad'>
+        {
+          steps.map((step, index) => {
+            return <NoteCard item={step} index={index}/>
+          })
+        }
+        </div>
+        <div className='errors'>
+          <div id='titleError'>{formErrors.instructions}</div>
+        </div>
+        <label htmlFor='instructions'>
+            <input
+              type='text'
+              name='instructions'
+              value={formValues.instructions}
+              placeholder='Enter a step then press "ADD STEP"'
+              onChange={onInputChange}
+            ></input>
+        </label>
+        <button  disabled={disabled} onClick={appendStep} id='appendBtn'>Add Step</button>
 
-          <button  id='submitBtn'>Submit Instructions</button>
+        <button  id='submitBtn'>Submit Instructions</button>
         </form>
         <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
-                    <source src={video} type='video/mp4'/>
-                </video>
-        </ParentDiv>
+           <source src={video} type='video/mp4'/>
+        </video>
+      </ParentDiv>
       )
 }
 

@@ -23,8 +23,6 @@ const Ingredients = props => {
       .then(res => {
         setIngredients([res.data, ...ingredients])
         setFormValues(initialFormValues)
-        // console.log(res.data)
-        // console.log(ingredients)
       })
       .catch(err => {
         console.log(err)
@@ -96,6 +94,9 @@ const Ingredients = props => {
             })
           }
           </div>
+            <div className='errors'>
+                <div id='titleError'>{formErrors.ingredients}</div>
+            </div>
           <label htmlFor='ingredients'>
               <input
                 type='text'
@@ -105,7 +106,7 @@ const Ingredients = props => {
                 onChange={onInputChange}
               ></input>
           </label>
-        <button  onClick={appendStep} id='appendBtn'>Add ingredient</button>
+        <button  disabled={disabled} onClick={appendStep} id='appendBtn'>Add ingredient</button>
           
           <button id='submitBtn'>Submit Ingredients</button>
         </form>

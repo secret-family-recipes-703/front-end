@@ -27,6 +27,9 @@ const submit = evt => {
                     <h2>Add Your Recipe!</h2>
                 <div className='errors'>
                     <div id='titleError'>{formErrors.title}</div>
+                    <div id='titleError'>{formErrors.source}</div>
+                    <div id='titleError'>{formErrors.src}</div>
+                    <div id='titleError'>{formErrors.category}</div>
                 </div>
                     <label htmlFor='title'>
                         <input

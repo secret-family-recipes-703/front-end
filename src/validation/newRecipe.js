@@ -7,12 +7,14 @@ const formSchema = yup.object().shape({
     .required("A title for your recipe is required"),
   source: yup
     .string()
+    .min(3, "Source must be longer than 3 character")
     .required("Image source is required"),
   src: yup
-  .string(),  
+  .string()
+  .url('Must be a valid url'),  
   category: yup 
     .string()
-    // .oneOf('pizza', 'lame')
+    .oneOf(['pizza', 'lame'], 'Must choose a valid category')
 })
  
 export default formSchema

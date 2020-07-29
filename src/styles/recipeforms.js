@@ -51,6 +51,13 @@ form{
         font-family: Poppins;
         font-size: 1.1rem;
     }
+    input:focus{
+        outline: none;
+        transform: scale(1.1);
+    }
+    input:hover{
+        transform: scale(1.1);
+    }
     select{
         text-align-last:center;
     }
@@ -69,6 +76,14 @@ form{
         text-transform: uppercase;
         font-size: 1.25rem;
         text-align: center;
+    }
+    button:hover{
+        transform: scale(1.1);
+    }
+    button:disabled, #appendBtn:disabled{
+        background-color: grey;
+        border: none;
+        box-shadow: none;
     }
     #appendBtn{
         background-color: #FF91BB;
@@ -97,7 +112,7 @@ form{
             /* min-height: 100%; */
             max-height:100%;
             min-width: 100%;
-            top: 0;
+            /* top: 0; */
             bottom: 0;
             right: 0;
             /* left: 0; */
