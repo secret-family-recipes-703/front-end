@@ -22,9 +22,6 @@ const RecipeDiv = Styled.div`
         height: 200px
     }
 `
-
-
-
 const RecipeCard = props => {
 const {recipe} = props
     return(
