@@ -8,8 +8,8 @@ import NewIngredients from './components/addIngredientsForm'
 function App() {
   return (
     <div>
-      <NewRecipe/>
-      <NewInstructions/>
+      {/* <NewRecipe/> */}
+      {/* <NewInstructions/> */}
       <NewIngredients/>
     </div>
   );

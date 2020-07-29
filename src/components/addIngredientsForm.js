@@ -4,6 +4,7 @@ import * as yup from 'yup'
 import newInfo from '../validation/newIngredients'
 import ParentDiv from '../styles/recipeforms'
 import NoteCard from './noteCard'
+import video from '../assets/riceVid.mp4'
 
 
 const initialFormValues = {ingredients: ''}
@@ -108,6 +109,9 @@ const Ingredients = props => {
           
           <button id='submitBtn'>Submit Ingredients</button>
         </form>
+        <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
+            <source src={video} type='video/mp4'/>
+        </video>
         </ParentDiv>
       )
 }

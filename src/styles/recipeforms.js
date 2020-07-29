@@ -8,7 +8,9 @@ display: flex;
 justify-content: center;
 width: 100%;
 height: 100vh;
+/* overflow-x: hidden; */
 form{
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -17,7 +19,8 @@ form{
     margin: 3rem 0;
     border: 3px solid #E81B23;
     border-radius: 20px;
-    background-color: #4AC6D7;
+    /* background-color: #4AC6D7; */
+    background-color: rgba(74, 198, 215, 0.7);
     box-sizing: border-box;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     min-height: 550px;
@@ -36,7 +39,7 @@ form{
         text-align: center;
     }
     input, select{
-        background: #EEEEEE;
+        background-color: #EEEEEE;
         border: 2px solid #F5855B;
         box-sizing: border-box;
         box-shadow: 4px 4px 0px #F5855B;
@@ -52,7 +55,7 @@ form{
         text-align-last:center;
     }
     button{
-        background: #68BBB8;
+        background-color: #68BBB8;
         border: 2px solid #FF91BB;
         box-sizing: border-box;
         box-shadow: 4px 4px 0px #FF91BB;
@@ -87,7 +90,23 @@ form{
         margin: 0;
         font-family: 'Merienda-Regular'
     }
-}2
+}
+        #videoBG {
+            position: absolute;
+            z-index: -1;
+            /* min-height: 100%; */
+            max-height:100%;
+            min-width: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            /* left: 0; */
+            padding: none;
+            overflow-x: hidden;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
 `
 
 export default ParentDiv

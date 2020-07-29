@@ -1,5 +1,6 @@
 import React from "react"
 import ParentDiv from '../styles/recipeforms'
+import video from '../assets/riceVid.mp4'
 
 
 const RecipeForm = props => {
@@ -69,6 +70,9 @@ const submit = evt => {
                     <button disabled={disabled} id='submitBtn'>Add Recipe</button>
 
                 </form>
+                <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
+                    <source src={video} type='video/mp4'/>
+                </video>
          </ParentDiv>
     )
 }
