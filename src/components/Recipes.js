@@ -1,19 +1,20 @@
 import React, {useEffect, useContext} from 'react'
 import axiosWithAuth from '../util/axiosWithAuth'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 import {RecipeContext} from '../contexts/Context'
 import SearchBar from './SearchBar'
 
 import '../styles/recipeList.css'
 
-const Recipes = () => {
+const Recipes = (props) => {
 
   // const {searchValue} = useContext(RecipeContext)
   const {recipes, addRecipes} = useContext(RecipeContext)
   const {push} = useHistory()
 
-  const recipeDetails = () => {
-    push(`/recipe${recipes.id}`)
+  function routeToRecipe(ev, recipe) {
+    ev.preventDefault();
+    props.history.push(`/recipe/${recipe.id}`);
   }
 
   useEffect(() => {
@@ -28,11 +29,12 @@ const Recipes = () => {
       <div>
       <SearchBar />
       <a href='/create'>Add a New Recipe</a>
-      <ul>
+      <div className="recipeContainer">
         {recipes.map(recipe => 
-        <div className="recipeContainer">
-          <div className="recipeCard">
-          <img alt="recipe pic" src={recipe.imageURL} onClick={recipeDetails}/>
+          <div className="recipeCard" key={recipe.id}>
+          <Link to={`/recipe/${recipe.id}`}>
+            <img alt="recipe pic" src={recipe.imageURL}/>
+          </Link>
             <br />
             <button>View Ingredients + Instructions</button>
             <br />
@@ -45,9 +47,8 @@ const Recipes = () => {
             <button>Edit Recipe</button>
             <button>Delete Recipe</button>
           </div>
-        </div>
         )}
-      </ul>
+        </div>
       </div>
     )
 }
