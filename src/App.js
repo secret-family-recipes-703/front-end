@@ -9,7 +9,9 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Recipes from './components/Recipes'
 // import NewRecipe from './components/New'
-import RecipeForm from './components/createPostForm'
+import RecipeForm from './components/createPost'
+import InstructionsForm from './components/addInstructionsForm'
+import IngredientsForm from './components/addIngredientsForm'
 import RecipeCard from './components/RecipeCard'
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/create" component={RecipeForm} />
+          <Route exact path='/instructions' component={InstructionsForm} />
+          <Route exact path='/ingredients' component={IngredientsForm} />
           <Route path="/recipe/:id" component={RecipeCard} />
         </RecipeContext.Provider>
       </div>

@@ -5,7 +5,9 @@ import Styled from 'styled-components'
     box-sizing: border-box
 }
 display: flex;
-justify-content: center;
+flex-direction: column;
+align-items: center;
+/* justify-content: center; */
 width: 100%;
 height: 100vh;
 /* overflow-x: hidden; */
@@ -117,7 +119,7 @@ form{
         #videoBG {
             position: absolute;
             z-index: -1;
-            /* min-height: 100%; */
+            min-height: 50%;
             max-height:100%;
             min-width: 100%;
             /* max-width:100%; */
@@ -129,7 +131,7 @@ form{
             overflow-x: hidden;
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center;
+            /* background-position: center; */
         }
 `
 
