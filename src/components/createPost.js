@@ -3,18 +3,19 @@ import axios from 'axios'
 import * as yup from 'yup'
 import newRecipe from '../validation/newRecipe'
 import Form from './createPostForm'
+import axiosWithAuth from '../util/axiosWithAuth'
 
 const initialFormValues = {
-    title: '',
+    name: '',
     source: '',
     category: '',
-    src: ''
+    imageURL: ''
   }
   const initialFormErrors = {
-    title: '',
+    name: '',
     source: '',
     category: '',
-    src: ''
+    imageURL: ''
   }
   const initialDisabled = true
 
@@ -26,7 +27,8 @@ const CreatePost = (props) => {
     const [disabled, setDisabled] = useState(initialDisabled) 
 
 const postNewRecipe = newRecipe => {
-    axios.post('https://secret-family-recipes-703.herokuapp.com/api/recipes', newRecipe)
+    axiosWithAuth()
+    .post('https://secret-family-recipes-703.herokuapp.com/api/recipes', newRecipe)
       .then(res => {
         setRecipe([res.data, ...recipe])
         setFormValues(initialFormValues)

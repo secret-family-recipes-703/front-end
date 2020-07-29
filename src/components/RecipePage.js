@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {useParams, useHistory} from 'react-router-dom'
+import {useParams, useHistory, Link} from 'react-router-dom'
 import {RecipeContext} from '../contexts/Context'
 import axiosWithAuth from '../util/axiosWithAuth'
 import Styled from  'styled-components'
@@ -79,6 +79,7 @@ const RecipePage = () => {
       <ul>{ingredients.map(ingredient => <li>{ingredient.ingredient}</li>)}</ul>
       <ol>{instructions.map(instruction => <li>{instruction.instruction}</li>)}</ol>
       <button onClick={() => deleteRecipe(recipe.id)}>Delete Recipe</button>
+      <Link to={`/editRecipe/${recipe.id}`}>Edit Recipe</Link>
     </RecipeSoloDiv>
     </div>
   )

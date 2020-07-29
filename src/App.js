@@ -12,6 +12,7 @@ import RecipeForm from './components/createPost'
 import InstructionsForm from './components/addInstructionsForm'
 import IngredientsForm from './components/addIngredientsForm'
 import RecipePage from './components/RecipePage'
+import EditRecipe from './components/EditRecipe'
 
 function App() {
   const [recipes, addRecipes] = useState([''])
@@ -30,6 +31,7 @@ function App() {
           <Route exact path='/instructions' component={InstructionsForm} />
           <Route exact path='/ingredients' component={IngredientsForm} />
           <Route path="/recipe/:id" component={RecipePage} />
+          <Route path="/editRecipe/:id" component={EditRecipe} />
         </RecipeContext.Provider>
       </div>
     </Router>
