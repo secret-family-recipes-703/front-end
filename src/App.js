@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-
-import './App.css';
-
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+import axiosWithAuth from "./util/axiosWithAuth";
 import {RecipeContext} from './contexts/Context'
 
 import Login from './components/Login'
@@ -35,6 +34,7 @@ function App() {
       </div>
     </Router>
   );
+
 }
 
 export default App;
