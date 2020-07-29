@@ -88,7 +88,7 @@ export default function Login() {
 				<form onSubmit={formSubmit}>
 					<div className="label-input-group">
 						<label className="login-label" htmlFor="username">
-							Userame&nbsp;&nbsp;&nbsp;
+							Username&nbsp;&nbsp;&nbsp;
 						</label>
 						<input
 							type="text"

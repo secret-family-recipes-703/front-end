@@ -134,8 +134,7 @@ export default function Register() {
 						REGISTER
 					</button>
 				</form>
-				<br />
-				<br />
+
 				<a className="already-text" href="/login">
 					Already Registered?
 				</a>

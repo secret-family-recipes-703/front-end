@@ -1,0 +1,16 @@
+.recipes-container {
+    display: block;
+    background: #4AC6D7;
+
+}
+.recipe-cards {
+    width: 40%;
+    background: white;
+    border-radius: 15px;
+    margin: 2rem auto;
+}
+
+.recipes-container a {
+    border-radius: 15px;
+    
+}
