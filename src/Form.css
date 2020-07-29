@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+    font-family: 'porter_sans_blockblock';
+    src: url('./fonts/porter-sans-inline-block-webfont.eot');
+    src: url('./fonts/porter-sans-inline-block-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/porter-sans-inline-block-webfont.woff') format('woff'),
+         url('./fonts/porter-sans-inline-block-webfont.ttf') format('truetype'),
+         url('./fonts/porter-sans-inline-block-webfont.svg#porter_sans_blockblock') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 62.5%;
+}
+
+.login-form-contianer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75vh;
+    background: #FFFFFF;
+}
+
+.register-form-contianer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65vh;
+    background: #FFFFFF;
+}
+
+h2 {
+    height: 65px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: center;
+    color: #E81B23; 
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+}
+
+.login-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 20vh;
+    background: #4AC6D7;
+    
+}
+
+.login-header h1 {
+font-family: 'porter_sans_blockblock';
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 69px;
+text-align: center;
+color: #FFD95C;
+}
+
+.register-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+    left: 0px;
+    top: 0px;
+    background: #4AC6D7;
+}
+
+.header-logo {
+    width: 696px;
+    height: 255px;
+    left: 125px;
+    top: 23px;
+    background: url(./images/SFRLogo.png);
+    background-repeat: no-repeat;
+}
+
+.header-chef-woman {
+    align-self: flex-end;
+    width: 323px;
+    height: 285px;
+}
+
+form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.label-input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.reg-label {
+    height: 50px;
+    width: 365px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: right;
+    color: #4AC6D7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-label {
+    height: 50px;
+    width: 200px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: right;
+    color: #4AC6D7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input {
+    display: unset;
+    width: 385px;
+    height: 58px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 5px #4AC6D7;
+    border-radius: 15px;
+    border: unset;
+    color: unset;
+    font: 400 2rem Arial;
+}
+input:focus{
+    border: 2px solid #FFD95C;
+}
+
+.form-terms-text {
+    width: 613px;
+    height: 45px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #4AC6D7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 2rem;
+}
+
+
+button {
+    width: 590px;
+    height: 58px;
+    background: #4AC6D7;
+    border-radius: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 36px;
+    line-height: 54px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: unset;
+    margin-top: 1rem;
+}
+button:disabled {
+    background: grey;
+    color: lightgray;
+    text-shadow: unset;
+}
+
+.already-text {
+    color: #E81B23;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.error {
+    display: block;
+    color: red;
+    font-family: Poppins;
+    text-align: end;
+    align-self: flex-end;
+}
