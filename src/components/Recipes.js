@@ -16,7 +16,7 @@ const Recipes = () => {
 
     return (
       <div>
-      <a href='/new'>Add a New Recipe</a>
+      <a href='/create'>Add a New Recipe</a>
       <ul>
         {recipes.map(recipe => 
         <ul>
