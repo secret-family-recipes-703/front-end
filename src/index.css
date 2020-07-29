@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'porter-sans-inline-block';
+  src: local('porter-sans-inline-block'), url(./fonts/porter-sans-inline-block.ttf) format('truetype');
+}

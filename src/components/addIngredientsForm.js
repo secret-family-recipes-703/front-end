@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import * as yup from 'yup'
 import newInfo from '../validation/newIngredients'
+import ParentDiv from '../styles/recipeforms'
 
 
 const initialFormValues = {ingredients: ''}
@@ -13,6 +14,7 @@ const Ingredients = props => {
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors) 
   const [disabled, setDisabled] = useState(initialDisabled) 
+  const [list, setList] = useState([])
 
   const postRecipeInfo = (newIngredients) => {
     axios.post('https://reqres.in/api/users', newIngredients)
@@ -20,7 +22,7 @@ const Ingredients = props => {
         setIngredients([res.data, ...ingredients])
         setFormValues(initialFormValues)
         // console.log(res.data)
-        console.log(ingredients)
+        // console.log(ingredients)
       })
       .catch(err => {
         console.log(err)
@@ -30,7 +32,7 @@ const Ingredients = props => {
 
     const submit = evt => {
         evt.preventDefault()
-        const newIngredients = {ingredients: formValues.ingredients.trim()}
+        const newIngredients = {ingredients: list}
         postRecipeInfo(newIngredients)
       }
     
@@ -62,26 +64,43 @@ const Ingredients = props => {
           setDisabled(!valid)
         })
       }, [formValues])
+
+            
+      useEffect(() => {
+        console.log(ingredients)
+       }, [ingredients])
+       useEffect(() => {
+         console.log(list)
+        }, [list])
+      
+     
+ 
+       const appendStep = evt => {
+         evt.preventDefault()
+         setList([...list, formValues.ingredients.trim()])
+         setFormValues(initialFormValues)
+       }    
     
 
       return(
-        <div>
+        <ParentDiv>
 
         <form onSubmit={submit}>
+        <h2>Add ingredients!</h2>
           <label htmlFor='ingredients'>
               <input
                 type='text'
                 name='ingredients'
                 value={formValues.ingredients}
-                placeholder='Enter ingredients for recipe'
+                placeholder='Enter an ingredient for recipe'
                 onChange={onInputChange}
               ></input>
           </label>
+        <button  onClick={appendStep} id='appendBtn'>Add ingredient</button>
           
           <button id='submitBtn'>Submit Ingredients</button>
         </form>
-      
-        </div>
+        </ParentDiv>
       )
 }
 
