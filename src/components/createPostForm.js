@@ -1,6 +1,7 @@
 import React from "react"
 import ParentDiv from '../styles/recipeforms'
 import video from '../assets/riceVid.mp4'
+import NavBar from './navBar'
 
 
 const RecipeForm = props => {
@@ -23,6 +24,7 @@ const submit = evt => {
 
     return(
         <ParentDiv>
+            <NavBar/>
                 <form onSubmit={submit}>
                     <h2>Add Your Recipe!</h2>
                 <div className='errors'>
