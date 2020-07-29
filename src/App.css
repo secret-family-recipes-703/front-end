@@ -1,48 +1,44 @@
-html,
-body,
-#root,
 .App {
-  width: 100%;
-  height: 97.8%;
-  margin: 0;
-  padding: 0;
-  background: #83a4d4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #f6eabe, #ffaebb);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #f6eabe, #ffaebb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.App {
-  margin: 2% 0% ;
   text-align: center;
+  background: blue;
+  background-image: url('./assets/poster.png');
 }
 
-input {
-  margin: .25%;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 img {
-  width:120px;
-}
-
-.addNew {
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-}
-
-ul {
-  padding: .5% 0%;
-}
-
-@font-face {
-  font-family: 'porter-sans-inline-block';
-  src: local('porter-sans-inline-block'), url(./fonts/porter-sans-inline-block.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'PrincessSofia-Regular';
-  src: local('PrincessSofia-Regular'), url(./fonts/PrincessSofia-Regular.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Merienda-Regular';
-  src: local('Merienda-Regular'), url(./fonts/Merienda-Regular.ttf) format('truetype');
+  width: 120px;
 }
