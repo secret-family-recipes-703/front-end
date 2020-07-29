@@ -16,3 +16,11 @@ code {
   font-family: 'porter-sans-inline-block';
   src: local('porter-sans-inline-block'), url(./fonts/porter-sans-inline-block.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'PrincessSofia-Regular';
+  src: local('PrincessSofia-Regular'), url(./fonts/PrincessSofia-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Merienda-Regular';
+  src: local('Merienda-Regular'), url(./fonts/Merienda-Regular.ttf) format('truetype');
+}

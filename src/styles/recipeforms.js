@@ -21,7 +21,7 @@ form{
     box-sizing: border-box;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     min-height: 550px;
-    max-height: 700px;
+    max-height: 800px;
     h2 {
         color: #FF91BB;
         font-family: 'porter-sans-inline-block';
@@ -29,7 +29,7 @@ form{
         font-weight: normal;
         font-size: 2.5rem;
         text-align: center;
-        margin: 3rem 2rem 2rem
+        margin: 3rem 2rem 2rem;
     }
     label{
         width: 100%;
@@ -72,7 +72,22 @@ form{
         box-shadow: 4px 4px 0px  #FFD95C;
         border: 2px solid #FFD95C;
     }
-}
+    #notePad{
+        margin-bottom: 1rem;
+        transform: rotate(1deg);
+        width: 60%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(34, 30, 30, 0.2) 85.42%), #FFD95C;
+        height: 300px;
+        box-shadow: 4px 4px 8px;
+        padding: 1rem 2rem 2rem;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    #notePad p {
+        margin: 0;
+        font-family: 'Merienda-Regular'
+    }
+}2
 `
 
 export default ParentDiv

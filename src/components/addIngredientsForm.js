@@ -3,6 +3,7 @@ import axios from 'axios'
 import * as yup from 'yup'
 import newInfo from '../validation/newIngredients'
 import ParentDiv from '../styles/recipeforms'
+import NoteCard from './noteCard'
 
 
 const initialFormValues = {ingredients: ''}
@@ -87,6 +88,13 @@ const Ingredients = props => {
 
         <form onSubmit={submit}>
         <h2>Add ingredients!</h2>
+        <div id='notePad'>
+          {
+            list.map((item, index) => {
+              return <NoteCard item={item} index={index}/>
+            })
+          }
+          </div>
           <label htmlFor='ingredients'>
               <input
                 type='text'

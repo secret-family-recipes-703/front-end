@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './fonts/porter-sans-inline-block.ttf'
+import './fonts/PrincessSofia-Regular.ttf'
+import './fonts/Merienda-Regular.ttf'
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,8 +3,7 @@ import axios from 'axios'
 import * as yup from 'yup'
 import newInfo from '../validation/newInstructions'
 import ParentDiv from '../styles/recipeforms'
-
-
+import NoteCard from './noteCard'
 
 
 const initialFormValues = {
@@ -27,8 +26,6 @@ const Instructions = props => {
       .then(res => {
         setInstructions([res.data, ...instructions])
         setFormValues(initialFormValues)
-        // console.log(res.data)
-        // console.log(instructions)
       })
       .catch(err => {
         console.log(err)
@@ -36,18 +33,11 @@ const Instructions = props => {
       })
   }
 
-    // const submit = evt => {
-    //     evt.preventDefault()
-    //     const newInstructions = {instructions: formValues.instructions.trim()}
-    //     postRecipeInfo(newInstructions)
-    //   }
-
       const submit = evt => {
         evt.preventDefault()
         const newInstructions = {instructions: steps}
         postRecipeInfo(newInstructions)
       }
-    
     
       const onInputChange = evt => {
         const { name, value } = evt.target
@@ -78,8 +68,6 @@ const Instructions = props => {
         })
       }, [formValues])
 
-
-
       useEffect(() => {
        console.log(instructions)
       }, [instructions])
@@ -87,8 +75,6 @@ const Instructions = props => {
         console.log(steps)
        }, [steps])
      
-    
-
       const appendStep = evt => {
         evt.preventDefault()
         setSteps([...steps, formValues.instructions.trim()])
@@ -97,9 +83,15 @@ const Instructions = props => {
 
       return(
         <ParentDiv>
-
         <form onSubmit={submit}>
           <h2>Add instructions!</h2>
+          <div id='notePad'>
+          {
+            steps.map((step, index) => {
+              return <NoteCard item={step} index={index}/>
+            })
+          }
+          </div>
           <label htmlFor='instructions'>
               <input
                 type='text'
