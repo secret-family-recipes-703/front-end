@@ -32,7 +32,6 @@ const {recipe} = props
             <h2>{recipe.name} </h2>
             <p>Category: {recipe.category}</p>
             <p>Source: {recipe.source}</p>
-            
         </RecipeDiv>
     )
 }

@@ -10,9 +10,10 @@ const {formErrors, formValues, disabled, inputChange, postNewRecipe} = props
 const submit = evt => {
     evt.preventDefault()
     const newRecipe = {
-      title: formValues.title.trim(),
+      name: formValues.name.trim(),
       source: formValues.source.trim(),
       category: formValues.category,
+      imageURL: formValues.imageURL
     }
     postNewRecipe(newRecipe)
   }
@@ -28,17 +29,17 @@ const submit = evt => {
                 <form onSubmit={submit}>
                     <h2>Add Your Recipe!</h2>
                 <div className='errors'>
-                    <div id='titleError'>{formErrors.title}</div>
+                    <div id='titleError'>{formErrors.name}</div>
                     <div id='titleError'>{formErrors.source}</div>
-                    <div id='titleError'>{formErrors.src}</div>
+                    <div id='titleError'>{formErrors.imageURL}</div>
                     <div id='titleError'>{formErrors.category}</div>
                 </div>
                     <label htmlFor='title'>
                         <input
                             type='text'
-                            name='title'
-                            value={formValues.title}
-                            placeholder='Enter title of recipe'
+                            name='name'
+                            value={formValues.name}
+                            placeholder='Enter name of recipe'
                             onChange={onInputChange}
                         ></input>
                     </label>
@@ -54,8 +55,8 @@ const submit = evt => {
                     <label htmlFor='imgSRC'>
                         <input
                             type='text'
-                            name='src'
-                            value={formValues.src}
+                            name='imageURL'
+                            value={formValues.imageURL}
                             placeholder='Enter URL of image'
                             onChange={onInputChange}
                         ></input>
@@ -72,7 +73,7 @@ const submit = evt => {
                         </select>
                     </label>
 
-                    <button disabled={disabled} id='submitBtn'>Add Recipe</button>
+                    <button onSubmit={submit} id='submitBtn'>Add Recipe</button>
 
                 </form>
                 <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
