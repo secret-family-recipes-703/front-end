@@ -9,7 +9,7 @@ import '../styles/recipeList.css'
 const Recipes = () => {
 
   // const {searchValue} = useContext(RecipeContext)
-  const {recipes, addRecipes, searchValue} = useContext(RecipeContext)
+  const {recipes, addRecipes} = useContext(RecipeContext)
   const {push} = useHistory()
 
   const recipeDetails = () => {
@@ -22,7 +22,7 @@ const Recipes = () => {
     .then(res => {
       addRecipes(res.data.data)
     })
-  }, [])
+  }, [addRecipes])
 
     return (
       <div>
