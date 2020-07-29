@@ -66,24 +66,8 @@ body,
 }
 
 .App {
-  text-align: center;
-}
 
-input {
-  margin: .25%;
-}
-
-img {
-  width:120px;
-}
-
-.addNew {
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-}
-
-ul {
+  ul {
   padding: .5% 0%;
 }
 
@@ -96,4 +80,19 @@ ul {
   color: white;
   padding: 0 5%;
   font-family: Poppins;
+=======
+.App-link {
+  color: #61dafb;
 }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img {
+  width: 120px;
