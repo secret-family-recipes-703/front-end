@@ -1,4 +1,4 @@
-import React, {useEffect, useContext, useState} from 'react'
+import React, {useEffect, useContext} from 'react'
 import axiosWithAuth from '../util/axiosWithAuth'
 import {RecipeContext} from '../contexts/Context'
 
@@ -12,7 +12,7 @@ const Recipes = () => {
     .then(res => {
       addRecipes(res.data.data)
     })
-  }, [])
+  }, [addRecipes])
 
     return (
       <div>
@@ -20,7 +20,7 @@ const Recipes = () => {
       <ul>
         {recipes.map(recipe => 
         <ul>
-          {recipe.name} // {recipe.category} // {recipe.source} <img src={recipe.imageURL} />
+          {recipe.name} - {recipe.category} - {recipe.source} <img alt="recipe pic" src={recipe.imageURL} />
         </ul>)}
       </ul>
       </div>
