@@ -5,6 +5,11 @@ import {createStore, applyMiddleware} from "redux";
 import {recipesReducer} from './reducers'
 import App from './App';
 import thunk from "redux-thunk"
+import './fonts/Merienda-Regular.ttf'
+import './fonts/porter-sans-inline-block.ttf'
+import './fonts/PrincessSofia-Regular.ttf'
+
+import './index.css'
 
 const store = createStore(recipesReducer, applyMiddleware(thunk))
 
