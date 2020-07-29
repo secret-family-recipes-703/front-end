@@ -12,9 +12,11 @@ import Recipes from './components/Recipes'
 import RecipeForm from './components/createPost'
 import InstructionsForm from './components/addInstructionsForm'
 import IngredientsForm from './components/addIngredientsForm'
+import RecipeCard from './components/RecipeCard'
 
 function App() {
   const [recipes, addRecipes] = useState([''])
+  const [searchValue, setSearchValue] = useState('')
 
   return (
     <Router>
@@ -22,12 +24,13 @@ function App() {
         
         <Route exact path="/" component={Register} className="RegisterComponent" />
 
-        <RecipeContext.Provider value={{recipes, addRecipes}}>
+        <RecipeContext.Provider value={{recipes, addRecipes, searchValue, setSearchValue}}>
           <Route exact path="/login" component={Login} />
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/create" component={RecipeForm} />
           <Route exact path='/instructions' component={InstructionsForm} />
           <Route exact path='/ingredients' component={IngredientsForm} />
+          <Route path="/recipe/:id" component={RecipeCard} />
         </RecipeContext.Provider>
       </div>
     </Router>
