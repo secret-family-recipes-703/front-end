@@ -61,6 +61,12 @@ form{
     select{
         text-align-last:center;
     }
+    select:hover{
+        transform: scale(1.1);
+    }
+    select:focus{
+        outline: none;
+    }
     button{
         background-color: #68BBB8;
         border: 2px solid #FF91BB;
@@ -75,6 +81,9 @@ form{
         text-transform: uppercase;
         font-size: 1.25rem;
         text-align: center;
+    }
+    button:focus{
+        outline: none;
     }
     button:hover{
         transform: scale(1.1);
@@ -111,6 +120,7 @@ form{
             /* min-height: 100%; */
             max-height:100%;
             min-width: 100%;
+            /* max-width:100%; */
             /* top: 0; */
             bottom: 0;
             right: 0;
