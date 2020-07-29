@@ -57,7 +57,7 @@ const NavBar = props => {
     return(
         <NavBarStyle>
             <div>
-            <h2>Secret Family Recipes</h2>
+            <NavLink style={{textDecoration: 'none'}} to='/recipes'><h2>Secret Family Recipes</h2></NavLink>
             { 
             <nav>
                 <NavLink to='/recipes'>

@@ -3,10 +3,11 @@ import axiosWithAuth from '../util/axiosWithAuth'
 import {useHistory, Link} from 'react-router-dom'
 import {RecipeContext} from '../contexts/Context'
 import NavBar from './navBar'
-import Recipe from './recipeCard'
+import Recipe from './RecipeCard'
 import Styled from  'styled-components'
 import video from '../assets/strawberryVid.mp4'
 import SearchBar from './SearchBar'
+import '../styles/recipeList.css'
 
 const RecipesDiv = Styled.div`
 display: flex;
@@ -34,8 +35,6 @@ padding: 0 2rem;
         }
 `
 
-import '../styles/recipeList.css'
-
 const Recipes = (props) => {
 
   // const {searchValue} = useContext(RecipeContext)
@@ -53,7 +52,7 @@ const Recipes = (props) => {
     .then(res => {
       addRecipes(res.data.data)
     })
-  }, [addRecipes])
+  }, [])
 
     return (
       <div>
@@ -61,7 +60,7 @@ const Recipes = (props) => {
         <RecipesDiv>
           {
           recipes.map(recipe => {
-          return <Recipe recipe={recipe}/>
+            return <Link style={{textDecoration: 'none'}}to={`/recipe/${recipe.id}`}><Recipe recipe={recipe}/></Link>
           })
           }
           <video id='videoBG' poster='../src/assets/strawberry.png' autoPlay muted loop>
@@ -69,7 +68,7 @@ const Recipes = (props) => {
           </video>
         </RecipesDiv>
 
-      <SearchBar />
+      {/* <SearchBar />
       <a href='/create'>Add a New Recipe</a>
       <div className="recipeContainer">
         {recipes.map(recipe => 
@@ -90,7 +89,7 @@ const Recipes = (props) => {
             <button>Delete Recipe</button>
           </div>
         )}
-        </div>
+        </div> */}
       </div>
     )
 }
