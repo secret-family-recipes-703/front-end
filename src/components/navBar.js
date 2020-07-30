@@ -24,6 +24,7 @@ div{
             display:flex;
             align-items: center;
             font-family: Poppins;
+            font-size:3rem;
         }
 }
 button{
@@ -37,7 +38,7 @@ button{
         color: white;
         font-family: Poppins;
         text-transform: uppercase;
-        font-size: 1rem;
+        font-size: 1.5rem;
         text-align: center;
     }
     button:focus{
