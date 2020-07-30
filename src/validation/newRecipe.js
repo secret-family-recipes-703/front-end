@@ -14,7 +14,7 @@ const formSchema = yup.object().shape({
   .url('Must be a valid url'),  
   category: yup 
     .string()
-    .oneOf(['pizza', 'lame'], 'Must choose a valid category')
+    .oneOf(['Pizza', 'Sandwich', 'Pasta', 'Rice', 'Meat', 'Vegan', 'Festive', 'Breakfast', 'Lunch', 'Dinner', 'Snack'], 'Must choose a valid category')
 })
  
 export default formSchema

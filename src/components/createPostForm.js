@@ -68,8 +68,17 @@ const submit = evt => {
                             name='category'
                         >
                             <option value='' >Food category</option>
-                            <option value='pizza' >Pizza</option>
-                            <option value='lame' >Not pizza</option>
+                            <option value='Pizza' >Pizza</option>
+                            <option value='Sandwich' >Sandwich</option>
+                            <option value='Pasta' >Pasta</option>
+                            <option value='Rice' >Rice</option>
+                            <option value='Meat' >Meat</option>
+                            <option value='Vegan' >Vegan</option>
+                            <option value='Festive' >Festive</option>
+                            <option value='Breakfast' >Breakfast</option>
+                            <option value='Lunch' >Lunch</option>
+                            <option value='Dinner' >Dinner</option>
+                            <option value='Snack' >Snack</option>
                         </select>
                     </label>
 

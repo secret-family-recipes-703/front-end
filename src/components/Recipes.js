@@ -9,14 +9,18 @@ import video from "../assets/strawberryVid.mp4";
 import SearchBar from "./SearchBar";
 
 const RecipesDiv = Styled.div`
+box-sizing: border-box;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 margin: 0 auto 2rem;
 max-width: 1100px;
 padding: 0 2rem;
+overflow: scroll;
+/* overflow: hidden; */
+max-height: 100vh;
 #videoBG {
-            position: absolute;
+            position: fixed;
             z-index: -1;
             min-height: 50%;
             max-height:100%;
