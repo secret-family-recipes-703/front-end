@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { RecipeContext } from "../contexts/Context";
 import NavBar from "./navBar";
-import Recipe from "./RecipeCard";
+import Recipe from "./recipeCard";
 import Styled from "styled-components";
 import video from "../assets/strawberryVid.mp4";
 import SearchBar from "./SearchBar";

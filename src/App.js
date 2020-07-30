@@ -11,8 +11,6 @@ import InstructionsForm from "./components/addInstructionsForm";
 import IngredientsForm from "./components/addIngredientsForm";
 import RecipePage from "./components/RecipePage";
 import EditRecipe from "./components/EditRecipe";
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
 
 function App() {
 	const [recipes, addRecipes] = useState([]);
@@ -37,8 +35,6 @@ function App() {
 					<Route exact path="/create" component={RecipeForm} />
 					<Route exact path="/instructions/:id" component={InstructionsForm} />
 					<Route exact path="/ingredients/:id" component={IngredientsForm} />
-					<Route exact path="/sign-in" component={SignIn}/>
-					<Route exact path="/sign-up" component={SignUp}/>
 					<Route path="/recipe/:id" component={RecipePage} />
 					<Route path="/editRecipe/:id" component={EditRecipe} />
 				</RecipeContext.Provider>
