@@ -4,7 +4,9 @@ import {TweenMax, TimelineLite, Power3} from 'gsap'
 
 const RecipeDiv = Styled.div`
     visibility: hidden;
-    &:hover {transform: scale(1.1)}
+    &:hover {transform: scale(1.1);
+    border: 3px solid #FF91BB;
+    transition: 0.3s;}
     max-width: 500px;
     display: flex
     flex-direction: column;
