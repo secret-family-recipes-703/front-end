@@ -37,7 +37,7 @@
     background: #FFFFFF;
 }
 
-h2 {
+.register-form-contianer h2, .login-form-contianer h2 {
     height: 65px;
     font-family: Poppins;
     font-style: normal;
@@ -99,7 +99,7 @@ color: #FFD95C;
     height: 285px;
 }
 
-form {
+.register-form-contianer form, .login-form-contianer form {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -116,7 +116,6 @@ form {
     align-items: center;
     margin-bottom: 5px;
 }
-
 
 .reg-label {
     height: 50px;
@@ -144,7 +143,7 @@ form {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-input {
+.label-input-group input {
     display: unset;
     width: 385px;
     height: 58px;
@@ -155,7 +154,7 @@ input {
     color: unset;
     font: 400 2rem Arial;
 }
-input:focus{
+.label-input-group input:focus{
     border: 2px solid #FFD95C;
 }
 
@@ -173,8 +172,7 @@ input:focus{
     margin-top: 2rem;
 }
 
-
-button {
+.register-form-contianer button, .login-form-contianer button {
     width: 590px;
     height: 58px;
     background: #4AC6D7;
@@ -191,7 +189,8 @@ button {
     border: unset;
     margin-top: 1rem;
 }
-button:disabled {
+
+.register-form-contianer button:disabled, .login-form-contianer button:disabled{
     background: grey;
     color: lightgray;
     text-shadow: unset;
@@ -201,7 +200,7 @@ button:disabled {
     color: #E81B23;
     font-family: Poppins;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .error {
@@ -210,5 +209,6 @@ button:disabled {
     font-family: Poppins;
     text-align: end;
     align-self: flex-end;
-    
+    font-size: 1.6rem;
+    padding: unset;
 }
