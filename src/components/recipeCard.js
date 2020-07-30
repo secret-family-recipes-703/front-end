@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import Styled from "styled-components";
+import {TweenMax, TimelineLite, Power3} from 'gsap'
 
 const RecipeDiv = Styled.div`
- &:hover {transform: scale(1.1)}
+    visibility: hidden;
+    &:hover {transform: scale(1.1);
+    border: 3px solid #FF91BB;
+    transition: 0.3s;}
     max-width: 500px;
     display: flex
     flex-direction: column;
@@ -32,12 +36,27 @@ const RecipeDiv = Styled.div`
         padding: 0 1rem;
     }
 `;
+
+
+
 const RecipeCard = (props) => {
+    let app = useRef(null) 
+    
+    let tl = new TimelineLite()
+    
+    useEffect(() => {
+        // console.log(app)
+        TweenMax.to(app, 0, {css: {visibility: 'visible'}})
+        tl.from(app, 1.2, {y: 1280, ease: Power3.easeOut})
+        .from(app, 2, {rotate:15, ease: Power3.easeOut}, .3)
+        .from(app, 2, {scale:1.1, ease: Power3.easeOut}, .3)
+
+    }, [])
 	const { recipe } = props;
 	return (
-		<RecipeDiv>
+		<RecipeDiv ref={el => app = el}>
 			<div id="image-container">
-				<img alt="recipe pic" src={recipe.imageURL} />
+				<img alt="recipe pic" src={recipe.imageURL}/>
 			</div>
 			<h2>{recipe.name} </h2>
 			<p>Category: {recipe.category}</p>

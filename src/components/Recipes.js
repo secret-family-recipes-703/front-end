@@ -8,6 +8,7 @@ import video from "../assets/strawberryVid.mp4";
 import axiosWithAuth from '../util/axiosWithAuth'
 import SearchBar from "./SearchBar";
 import "../Search.css";
+
 const RecipesDiv = Styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -47,7 +48,7 @@ const Recipes = (props) => {
 
 	return (
 		<div>
-			<NavBar />
+			<NavBar /> 
 			<SearchBar />
 			<RecipesDiv>
 				{recipes &&
@@ -61,7 +62,7 @@ const Recipes = (props) => {
 						.map((recipe) => {
 							return (
 								<Link style={{ textDecoration: "none" }} to={`/recipe/${recipe.id}`} key={recipe.id}>
-									<Recipe recipe={recipe} key={recipe.id} />
+									<Recipe recipe={recipe} key={recipe.id}/>
 								</Link>
 							);
 						})}

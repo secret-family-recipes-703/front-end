@@ -31,7 +31,6 @@ const Instructions = props => {
       .post(`/recipes/${id}/instructions`, newInstructions)
       .then(res => {
         setInstructions([res.data, ...instructions])
-        // setFormValues(initialFormValues)
       })
       .catch(err => {
         console.log(err)
@@ -79,13 +78,6 @@ const Instructions = props => {
         })
       }, [formValues])
 
-      useEffect(() => {
-       console.log(instructions)
-      }, [instructions])
-      useEffect(() => {
-        console.log(steps)
-       }, [steps])
-     
       const appendStep = evt => {
         evt.preventDefault()
         setSteps([...steps, formValues.instructions.trim()])

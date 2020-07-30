@@ -3,7 +3,6 @@ import ParentDiv from '../styles/recipeforms'
 import video from '../assets/riceVid.mp4'
 import NavBar from './navBar'
 
-
 const RecipeForm = props => {
 const {formErrors, formValues, inputChange, postNewRecipe} = props
 
@@ -16,10 +15,6 @@ const submit = evt => {
       imageURL: formValues.imageURL
     }
     postNewRecipe(newRecipe)
-    // .then(res => {
-        // const recipeId = res.data.data.id
-        // history.push(`/ingredients/${recipeId}`)
-        // })
   }
 
   const onInputChange = evt => {

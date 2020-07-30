@@ -7,32 +7,29 @@ import Styled from 'styled-components'
 display: flex;
 flex-direction: column;
 align-items: center;
-/* justify-content: center; */
 width: 100%;
 height: 100vh;
-/* overflow-x: hidden; */
 form{
     max-width: 700px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     width: 65%;
     margin: 3rem 0;
     border: 3px solid #E81B23;
     border-radius: 20px;
-    /* background-color: #4AC6D7; */
     background-color: rgba(74, 198, 215, 0.7);
     box-sizing: border-box;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     min-height: 550px;
     max-height: 800px;
+    padding: 2rem;
     h2 {
         color: #FF91BB;
         font-family: 'porter-sans-inline-block';
         font-style: normal;
         font-weight: normal;
-        font-size: 2.5rem;
+        font-size: 4rem;
         text-align: center;
         margin: 3rem 2rem 2rem;
     }
@@ -110,6 +107,7 @@ form{
         padding: 1rem 2rem 2rem;
         overflow: scroll;
         overflow-x: hidden;
+        font-size: 2.6rem;
     }
     #notePad p {
         margin: 0;
@@ -122,16 +120,12 @@ form{
             min-height: 50%;
             max-height:100%;
             min-width: 100%;
-            /* max-width:100%; */
-            /* top: 0; */
             bottom: 0;
             right: 0;
-            /* left: 0; */
             padding: none;
             overflow-x: hidden;
             background-repeat: no-repeat;
             background-size: cover;
-            /* background-position: center; */
         }
         .errors{
             font-size:3rem;
