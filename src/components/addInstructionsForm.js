@@ -39,6 +39,10 @@ const Instructions = props => {
       })
   }
 
+  const goHome = () => {
+    history.push('/recipes')
+  }
+
       const submit = evt => {
         evt.preventDefault()
         const newInstructions = {instructions: steps}
@@ -114,7 +118,7 @@ const Instructions = props => {
         </label>
         <button  disabled={disabled} onClick={appendStep} id='appendBtn'>Add Step</button>
 
-        <button  id='submitBtn'>Submit Instructions</button>
+        <button onClick={goHome} id='submitBtn'>Submit Instructions</button>
         </form>
         <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
            <source src={video} type='video/mp4'/>

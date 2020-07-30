@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import ParentDiv from '../styles/recipeforms'
 import * as yup from 'yup'
 import newRecipe from '../validation/newRecipe'
@@ -27,7 +27,12 @@ const EditRecipeForm = props => {
   const params = useParams()
   const id = params.id
   const [formErrors, setFormErrors] = useState(initialFormErrors) 
+  const history = useHistory()
 
+
+  const goHome = () => {
+    history.push('/recipes')
+  }
 
   useEffect(() => {
     axiosWithAuth()
@@ -151,6 +156,7 @@ const EditRecipeForm = props => {
                     </label>
 
                     <button onSubmit={submit} id='submitBtn'>Update Recipe</button>
+                    <button onClick={goHome} id='submitBtn'>Return to Recipes</button>
 
                 </form>
       <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
