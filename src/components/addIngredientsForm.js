@@ -27,7 +27,6 @@ const Ingredients = props => {
     .post(`/recipes/${id}/ingredients`, newIngredients)
       .then(res => {
         setIngredients([res.data, ...ingredients])
-        // setFormValues(initialFormValues)
       })
       .catch(err => {
         console.log(err)
@@ -70,23 +69,12 @@ const Ingredients = props => {
           setDisabled(!valid)
         })
       }, [formValues])
-
-            
-      useEffect(() => {
-        console.log(ingredients)
-       }, [ingredients])
-       useEffect(() => {
-         console.log(list)
-        }, [list])
       
-     
- 
        const appendStep = evt => {
          evt.preventDefault()
          setList([...list, formValues.ingredients.trim()])
          setFormValues(initialFormValues)
        }    
-    
 
       return(
         <ParentDiv>
