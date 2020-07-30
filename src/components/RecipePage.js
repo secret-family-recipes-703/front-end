@@ -11,39 +11,68 @@ const RecipeSoloDiv = Styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
-    min-width: 250px;
-    max-width: 350px;
-    margin: 2% 42%;
-    /* border: 3px solid #E81B23; */
+    width: 45%;
+    min-width: 350px;
+    max-width: 500px;
+    margin: 2rem auto;
     border-radius: 20px;
     background-color: rgba(74, 198, 215, 0.7);
     box-sizing: border-box;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Poppins;
-    font-size: 3rem;
+    font-size: 3.5rem;
     img{
         width:100%;
         border-radius: 20px;
-        height: 200px
+        min-height: 250px;
+        max-height: 400px;
+    }
+    button, a{
+        background-color: #68BBB8;
+        box-shadow: 4px 4px 0px #FF91BB;        box-shadow: 4px 4px 0px #FF91BB;
+        box-sizing: border-box;
+        border: 2px solid #FF91BB;
+        box-shadow: 4px 4px 0px #FF91BB;
+        border-radius: 15px;
+        width: 65%;
+        height: 40px;
+        color: white;
+        margin: 2% 0;
+        font-family: Poppins;
+        text-transform: uppercase;
+        font-size: 2rem;
+        text-align: center;
+    }
+    button:focus, a:focus{
+        outline: none;
+    }
+    button:hover, a:hover{
+        transform: scale(1.1);
     }
     #videoBG {
-            position: absolute;
+            position: fixed;
             z-index: -1;
             min-height: 50%;
             max-height:100%;
             min-width: 100%;
-            /* max-width:100%; */
-            /* top: 0; */
             bottom: 0;
             right: 0;
-            /* left: 0; */
             padding: none;
             overflow-x: hidden;
             background-repeat: no-repeat;
             background-size: cover;
-            /* background-position: center; */
         }
+  #delete{
+    background-color: #E81B23;
+    box-shadow: 4px 4px 0px #FFD95C;
+    border: 2px solid #FFD95C;
+    margin-bottom: 2rem;
+  }
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 const RecipePage = () => {
@@ -97,8 +126,8 @@ const RecipePage = () => {
       <div>Source: {recipe.source}</div>
       <ul>{ingredients.map(ingredient => <li>{ingredient.ingredient}</li>)}</ul>
       <ol>{instructions.map(instruction => <li>{instruction.instruction}</li>)}</ol>
-      <button onClick={() => deleteRecipe(recipe.id)}>Delete Recipe</button>
       <Link to={`/editRecipe/${recipe.id}`}>Edit Recipe</Link>
+      <button id='delete' onClick={() => deleteRecipe(recipe.id)}>Delete Recipe</button>
       <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
         <source src={video} type='video/mp4'/>
       </video>
