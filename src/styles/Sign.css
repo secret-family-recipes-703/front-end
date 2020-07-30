@@ -55,8 +55,8 @@
 
 .signForm{
     background-color: white;
-    border:5px dotted #E81B23;
-    border-width:100%;
+    border:5px dotted #E81B23 !important;
+    border-width:100% !important;
     width: 50%;
     height:70vh;
     display: flex;
