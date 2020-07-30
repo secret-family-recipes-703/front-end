@@ -12,13 +12,11 @@ export default function SearchBar() {
 	};
 	return (
 		<div className="searchField">
-			<form onSubmit={onInputChange}>
+			<form>
 				<input type="text" placeholder="Search" value={searchValue} onChange={onInputChange} />
-				<Link id="searchresults" to="/searchresults">
-					<button type="submit" className="search-btn" onClick={onInputChange}>
-						<img src={searchIcon} alt="search button" />
-					</button>
-				</Link>
+				{/* <button type="submit" className="search-btn" onClick={onInputChange}>
+					<img src={searchIcon} alt="search button" />
+				</button> */}
 			</form>
 		</div>
 	);

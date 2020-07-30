@@ -15,7 +15,7 @@ import EditRecipe from "./components/EditRecipe";
 import SearchResults from "./components/SearchResults";
 
 function App() {
-	const [recipes, addRecipes] = useState([""]);
+	const [recipes, addRecipes] = useState([]);
 	const [searchValue, setSearchValue] = useState("");
 
 	return (
@@ -31,7 +31,6 @@ function App() {
 					<Route exact path="/ingredients" component={IngredientsForm} />
 					<Route path="/recipe/:id" component={RecipePage} />
 					<Route path="/editRecipe/:id" component={EditRecipe} />
-					<Route path="/searchresults" component={SearchResults} />
 				</RecipeContext.Provider>
 			</div>
 		</Router>

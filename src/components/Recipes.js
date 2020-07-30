@@ -36,10 +36,9 @@ padding: 0 2rem;
 `;
 
 const Recipes = (props) => {
-	// const {searchValue} = useContext(RecipeContext)
+	const { searchValue } = useContext(RecipeContext);
 	const { recipes, addRecipes } = useContext(RecipeContext);
 	const { push } = useHistory();
-
 	function routeToRecipe(ev, recipe) {
 		ev.preventDefault();
 		props.history.push(`/recipe/${recipe.id}`);
@@ -51,8 +50,18 @@ const Recipes = (props) => {
 			.then((res) => {
 				addRecipes(res.data.data);
 			});
-	}, [addRecipes]);
+	}, []);
 
+	useEffect(() => {
+		console.log(searchValue);
+		recipes &&
+			recipes.filter((recipe) => {
+				return (
+					recipe.category.toLowerCase().includes(searchValue.toLowerCase()) ||
+					recipe.name.toLowerCase().includes(searchValue.toLowerCase())
+				);
+			});
+	}, [searchValue]);
 	// 	return (
 	// 		<div className="recipes-container">
 	// 			<a href="/new">Add a New Recipe</a>
@@ -72,13 +81,19 @@ const Recipes = (props) => {
 			<NavBar />
 			<SearchBar />
 			<RecipesDiv>
-				{recipes.map((recipe) => {
-					return (
-						<Link style={{ textDecoration: "none" }} to={`/recipe/${recipe.id}`}>
-							<Recipe recipe={recipe} />
-						</Link>
-					);
-				})}
+				{recipes &&
+					recipes
+						// .filter((recipe) => {
+						// 	recipe.category.toLowerCase().includes(searchValue.toLowerCase()) ||
+						// 		recipe.name.toLowerCase().includes(searchValue.toLowerCase());
+						// })
+						.map((recipe) => {
+							return (
+								<Link style={{ textDecoration: "none" }} to={`/recipe/${recipe.id}`}>
+									<Recipe recipe={recipe} />
+								</Link>
+							);
+						})}
 				<video id="videoBG" poster="../src/assets/strawberry.png" autoPlay muted loop>
 					<source src={video} type="video/mp4" />
 				</video>
