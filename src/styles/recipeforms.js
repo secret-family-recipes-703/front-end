@@ -51,7 +51,7 @@ form{
         text-align: center;
         margin: 2% 0;
         font-family: Poppins;
-        font-size: 1.1rem;
+        font-size: 2rem;
     }
     input:focus{
         outline: none;
@@ -81,7 +81,7 @@ form{
         margin: 2% 0;
         font-family: Poppins;
         text-transform: uppercase;
-        font-size: 1.25rem;
+        font-size: 2rem;
         text-align: center;
     }
     button:focus{
@@ -132,6 +132,12 @@ form{
             background-repeat: no-repeat;
             background-size: cover;
             /* background-position: center; */
+        }
+        .errors{
+            font-size:3rem;
+            font-style: italic;
+            font-style: bold;
+            color:red;            
         }
 `
 
