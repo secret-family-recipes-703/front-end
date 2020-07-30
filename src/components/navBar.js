@@ -11,20 +11,18 @@ height: 80px;
 nav {display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* background-color: grey; */
-    width: 50%;
+    width: 30%;
 }
 div{
     display: flex;
     justify-content: space-between;
-    /* background-color: red; */
+    align-items: center;
     max-width: 1100px;
     width: 80%;
         h2{
-            display:flex;
-            align-items: center;
             font-family: Poppins;
             font-size:3rem;
+            color: #FF91BB;
         }
 }
 button{
@@ -33,7 +31,6 @@ button{
         box-sizing: border-box;
         box-shadow: 4px 4px 0px #FF91BB;
         border-radius: 15px;
-        /* height: 40px; */
         padding: .5rem 1rem;
         color: white;
         font-family: Poppins;

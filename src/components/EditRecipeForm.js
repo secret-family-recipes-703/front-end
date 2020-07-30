@@ -96,9 +96,6 @@ const EditRecipeForm = props => {
                     <h2>Edit Your Recipe!</h2>
                 <div className='errors'>
                     <div id='titleError'>{formErrors.name}</div>
-                    <div id='titleError'>{formErrors.source}</div>
-                    <div id='titleError'>{formErrors.imageURL}</div>
-                    <div id='titleError'>{formErrors.category}</div>
                 </div>
                     <label htmlFor='title'>
                         <input
@@ -108,15 +105,9 @@ const EditRecipeForm = props => {
                             onChange={onInputChange}
                         ></input>
                     </label>
-                    <label htmlFor='category'>
-                        <input
-                            type='text'
-                            name='category'
-                            value={formValues.category}
-                            placeholder={recipe.category}
-                            onChange={onInputChange}
-                        ></input>
-                    </label>
+                    <div className='errors'>
+                    <div id='titleError'>{formErrors.source}</div>
+                </div>
                     <label htmlFor='source'>
                         <input
                             type='text'
@@ -126,6 +117,9 @@ const EditRecipeForm = props => {
                             onChange={onInputChange}
                         ></input>
                     </label>
+                    <div className='errors'>
+                    <div id='titleError'>{formErrors.imageURL}</div>
+                </div>
                     <label htmlFor='imgSRC'>
                         <input
                             type='text'
@@ -135,8 +129,31 @@ const EditRecipeForm = props => {
                             onChange={onInputChange}
                         ></input>
                     </label>
+                    <div className='errors'>
+                    <div id='titleError'>{formErrors.category}</div>
+                </div>
+                    <label htmlFor='category'>
+                        <select
+                            onChange={onInputChange}
+                            value={formValues.category}
+                            name='category'
+                        >
+                            <option value='' >Food category</option>
+                            <option value='Pizza' >Pizza</option>
+                            <option value='Sandwich' >Sandwich</option>
+                            <option value='Pasta' >Pasta</option>
+                            <option value='Rice' >Rice</option>
+                            <option value='Meat' >Meat</option>
+                            <option value='Vegan' >Vegan</option>
+                            <option value='Festive' >Festive</option>
+                            <option value='Breakfast' >Breakfast</option>
+                            <option value='Lunch' >Lunch</option>
+                            <option value='Dinner' >Dinner</option>
+                            <option value='Snack' >Snack</option>
+                        </select>
+                    </label>
 
-                    <button onSubmit={submit} id='submitBtn'>Add Recipe</button>
+                    <button onSubmit={submit} id='submitBtn'>Update Recipe</button>
 
                 </form>
       <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>
