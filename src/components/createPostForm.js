@@ -2,11 +2,10 @@ import React from "react"
 import ParentDiv from '../styles/recipeforms'
 import video from '../assets/riceVid.mp4'
 import NavBar from './navBar'
-import {Link} from 'react-router-dom'
 
 
 const RecipeForm = props => {
-const {formErrors, formValues, disabled, inputChange, postNewRecipe} = props
+const {formErrors, formValues, inputChange, postNewRecipe} = props
 
 const submit = evt => {
     evt.preventDefault()
@@ -17,6 +16,10 @@ const submit = evt => {
       imageURL: formValues.imageURL
     }
     postNewRecipe(newRecipe)
+    // .then(res => {
+        // const recipeId = res.data.data.id
+        // history.push(`/ingredients/${recipeId}`)
+        // })
   }
 
   const onInputChange = evt => {
@@ -89,8 +92,7 @@ const submit = evt => {
                         </select>
                     </label>
 
-
-                    <button onSubmit={submit} id='submitBtn'>Add Recipe</button>
+                        <button onSubmit={submit} id='submitBtn'>Add Recipe</button>
 
                 </form>
                 <video id='videoBG' poster='../src/assets/poster.png' autoPlay muted loop>

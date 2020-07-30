@@ -1,6 +1,5 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useParams, useHistory, Link} from 'react-router-dom'
-import {RecipeContext} from '../contexts/Context'
 import axiosWithAuth from '../util/axiosWithAuth'
 import Styled from  'styled-components'
 import NavBar from './navBar'
@@ -29,10 +28,9 @@ const RecipeSoloDiv = Styled.div`
     }
     button, a{
         background-color: #68BBB8;
-        box-shadow: 4px 4px 0px #FF91BB;        box-shadow: 4px 4px 0px #FF91BB;
+        box-shadow: 4px 4px 0px #FF91BB;      
         box-sizing: border-box;
         border: 2px solid #FF91BB;
-        box-shadow: 4px 4px 0px #FF91BB;
         border-radius: 15px;
         width: 65%;
         height: 40px;
@@ -76,7 +74,6 @@ const RecipeSoloDiv = Styled.div`
 `
 
 const RecipePage = () => {
-  const {recipes, addRecipes} = useContext(RecipeContext)
   const [ingredients, setIngredients] = useState([])
   const [recipe, setRecipe] = useState([])
   const [instructions, setInstructions] = useState([])

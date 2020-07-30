@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
-import axios from 'axios'
 import * as yup from 'yup'
 import newRecipe from '../validation/newRecipe'
 import Form from './createPostForm'
 import axiosWithAuth from '../util/axiosWithAuth'
+import { useHistory } from 'react-router-dom'
 
 const initialFormValues = {
     name: '',
@@ -25,6 +25,7 @@ const CreatePost = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors) 
     const [disabled, setDisabled] = useState(initialDisabled) 
+    const history = useHistory();
 
 const postNewRecipe = newRecipe => {
     axiosWithAuth()
@@ -32,6 +33,9 @@ const postNewRecipe = newRecipe => {
       .then(res => {
         setRecipe([res.data, ...recipe])
         setFormValues(initialFormValues)
+        const recipeId = res.data.data.id
+        history.push(`/ingredients/${recipeId}`)
+
         console.log(res.data)
       })
       .catch(err => {

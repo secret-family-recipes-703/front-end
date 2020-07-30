@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import { RecipeContext } from "../contexts/Context";
-import { useHistory, Link, Route } from "react-router-dom";
-import searchIcon from "../images/search_icon.png";
 import "../Search.css";
 
 export default function SearchBar() {
@@ -14,9 +12,6 @@ export default function SearchBar() {
 		<div className="searchField">
 			<form>
 				<input type="text" placeholder="Search" value={searchValue} onChange={onInputChange} />
-				{/* <button type="submit" className="search-btn" onClick={onInputChange}>
-					<img src={searchIcon} alt="search button" />
-				</button> */}
 			</form>
 		</div>
 	);

@@ -6,13 +6,11 @@ import { RecipeContext } from "./contexts/Context";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Recipes from "./components/Recipes";
-// import NewRecipe from './components/New'
 import RecipeForm from "./components/createPost";
 import InstructionsForm from "./components/addInstructionsForm";
 import IngredientsForm from "./components/addIngredientsForm";
 import RecipePage from "./components/RecipePage";
 import EditRecipe from "./components/EditRecipe";
-import SearchResults from "./components/SearchResults";
 
 function App() {
 	const [recipes, addRecipes] = useState([]);
@@ -24,7 +22,7 @@ function App() {
 			.then((res) => {
 				addRecipes(res.data.data);
 			});
-	}, []);
+	}, [recipes]);
 
 	return (
 		<Router>
@@ -35,8 +33,8 @@ function App() {
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/recipes" component={Recipes} />
 					<Route exact path="/create" component={RecipeForm} />
-					<Route exact path="/instructions" component={InstructionsForm} />
-					<Route exact path="/ingredients" component={IngredientsForm} />
+					<Route exact path="/instructions/:id" component={InstructionsForm} />
+					<Route exact path="/ingredients/:id" component={IngredientsForm} />
 					<Route path="/recipe/:id" component={RecipePage} />
 					<Route path="/editRecipe/:id" component={EditRecipe} />
 				</RecipeContext.Provider>
