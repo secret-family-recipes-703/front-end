@@ -43,6 +43,15 @@ const submit = evt => {
                             onChange={onInputChange}
                         ></input>
                     </label>
+                    <label htmlFor='category'>
+                        <input
+                            type='text'
+                            name='category'
+                            value={formValues.category}
+                            placeholder='Enter category of recipe'
+                            onChange={onInputChange}
+                        ></input>
+                    </label>                    
                     <label htmlFor='source'>
                         <input
                             type='text'
@@ -60,17 +69,6 @@ const submit = evt => {
                             placeholder='Enter URL of image'
                             onChange={onInputChange}
                         ></input>
-                    </label>
-                    <label htmlFor='category'>
-                        <select
-                            onChange={onInputChange}
-                            value={formValues.category}
-                            name='category'
-                        >
-                            <option value='' >Food category</option>
-                            <option value='pizza' >Pizza</option>
-                            <option value='lame' >Not pizza</option>
-                        </select>
                     </label>
 
                     <button onSubmit={submit} id='submitBtn'>Add Recipe</button>
