@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { RecipeContext } from "../contexts/Context";
 import NavBar from "./navBar";
@@ -7,6 +7,7 @@ import Styled from "styled-components";
 import video from "../assets/strawberryVid.mp4";
 import SearchBar from "./SearchBar";
 import "../Search.css";
+
 const RecipesDiv = Styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -31,13 +32,10 @@ padding: 0 2rem;
 const Recipes = (props) => {
 	const { searchValue } = useContext(RecipeContext);
 	const { recipes } = useContext(RecipeContext);
-	// function routeToRecipe(ev, recipe) {
-	// 	ev.preventDefault();
-	// 	props.history.push(`/recipe/${recipe.id}`);
-	// }
+
 	return (
 		<div>
-			<NavBar />
+			<NavBar /> 
 			<SearchBar />
 			<RecipesDiv>
 				{recipes &&
@@ -51,7 +49,7 @@ const Recipes = (props) => {
 						.map((recipe) => {
 							return (
 								<Link style={{ textDecoration: "none" }} to={`/recipe/${recipe.id}`} key={recipe.id}>
-									<Recipe recipe={recipe} key={recipe.id} />
+									<Recipe recipe={recipe} key={recipe.id}/>
 								</Link>
 							);
 						})}
