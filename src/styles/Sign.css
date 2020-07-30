@@ -119,7 +119,7 @@
     margin-top: 3rem;
     margin-bottom:6rem;
 }
-#signBtn{
+.signBtn{
     width:70%;
     font-size: 2.8rem;
     border-radius:15px;
@@ -127,11 +127,11 @@
     background-color:#4AC6D7;
 }
 
-#signBtn:disabled{
+.signBtn:disabled{
     color:#adadad;
     background-color:#909090;
 }
-#signPlaceholder{
+::placeholder{
     color:#FF91BB;
     text-align: center;
 }

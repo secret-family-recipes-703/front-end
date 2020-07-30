@@ -129,7 +129,6 @@ export default function SignIn(){
                     </div>
                     <div className='labelInput'>
                     <input
-                    class="signPlaceholder"
                     type='text'
                     name='username'
                     placeholder='Create your username'
@@ -148,7 +147,6 @@ export default function SignIn(){
                     <input
                     type='password'
                     name='password'
-                    class="signPlaceholder"
                     placeholder='Create your password'
                     onChange={handleChange}
                     value={formValues.password}
