@@ -1,10 +1,11 @@
-import React, { useContext} from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { RecipeContext } from "../contexts/Context";
 import NavBar from "./navBar";
 import Recipe from "./recipeCard";
 import Styled from "styled-components";
 import video from "../assets/strawberryVid.mp4";
+import axiosWithAuth from '../util/axiosWithAuth'
 import SearchBar from "./SearchBar";
 import "../Search.css";
 
@@ -31,7 +32,19 @@ padding: 0 2rem;
 `;
 const Recipes = (props) => {
 	const { searchValue } = useContext(RecipeContext);
-	const { recipes } = useContext(RecipeContext);
+	const { recipes, addRecipes } = useContext(RecipeContext);
+	// function routeToRecipe(ev, recipe) {
+	// 	ev.preventDefault();
+	// 	props.history.push(`/recipe/${recipe.id}`);
+	// }
+
+	useEffect(() => {
+		axiosWithAuth()
+			.get("/recipes")
+			.then((res) => {
+				addRecipes(res.data.data);
+			});
+	}, []);
 
 	return (
 		<div>
