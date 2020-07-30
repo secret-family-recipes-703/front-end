@@ -1,0 +1,14 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4AC6D7;
+    height: 5vh;
+    color: white;
+    padding: 0 5%;
+    font-family: Poppins;
+  }
+
+  .footer-container p {
+      font-size: 1.8rem
+  }
