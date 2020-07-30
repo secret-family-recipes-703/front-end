@@ -7,7 +7,6 @@ import Recipe from "./recipeCard";
 import Styled from "styled-components";
 import video from "../assets/strawberryVid.mp4";
 import SearchBar from "./SearchBar";
-import "../styles/recipeList.css";
 
 const RecipesDiv = Styled.div`
 display: flex;
@@ -33,7 +32,7 @@ padding: 0 2rem;
             background-size: cover;
             /* background-position: center; */
         }
-`;
+`
 
 const Recipes = (props) => {
 	// const {searchValue} = useContext(RecipeContext)

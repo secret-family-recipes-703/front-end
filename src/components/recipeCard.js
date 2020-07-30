@@ -16,6 +16,7 @@ const RecipeDiv = Styled.div`
     box-sizing: border-box;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Poppins;
+    font-size: 2.5rem;
     img{
         width:100%;
         border-radius: 20px;
