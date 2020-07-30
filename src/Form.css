@@ -83,6 +83,7 @@ color: #FFD95C;
     left: 0px;
     top: 0px;
     background: #4AC6D7;
+    overflow: hidden;
 }
 
 .header-logo {
