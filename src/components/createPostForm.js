@@ -2,6 +2,7 @@ import React from "react"
 import ParentDiv from '../styles/recipeforms'
 import video from '../assets/riceVid.mp4'
 import NavBar from './navBar'
+import {Link} from 'react-router-dom'
 
 
 const RecipeForm = props => {
