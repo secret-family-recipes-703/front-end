@@ -30,9 +30,6 @@ const submit = evt => {
                     <h2>Add Your Recipe!</h2>
                 <div className='errors'>
                     <div id='titleError'>{formErrors.name}</div>
-                    <div id='titleError'>{formErrors.source}</div>
-                    <div id='titleError'>{formErrors.imageURL}</div>
-                    <div id='titleError'>{formErrors.category}</div>
                 </div>
                     <label htmlFor='title'>
                         <input
@@ -42,7 +39,10 @@ const submit = evt => {
                             placeholder='Enter name of recipe'
                             onChange={onInputChange}
                         ></input>
-                    </label>     
+                    </label>
+                    <div className='errors'>
+                    <div id='titleError'>{formErrors.source}</div>
+                </div> 
                     <label htmlFor='source'>
                         <input
                             type='text'
@@ -52,6 +52,9 @@ const submit = evt => {
                             onChange={onInputChange}
                         ></input>
                     </label>
+                    <div className='errors'>
+                    <div id='titleError'>{formErrors.imageURL}</div>
+                </div>
                     <label htmlFor='imgSRC'>
                         <input
                             type='text'
@@ -61,6 +64,9 @@ const submit = evt => {
                             onChange={onInputChange}
                         ></input>
                     </label>
+                    <div className='errors'>
+                    <div id='titleError'>{formErrors.category}</div>
+                </div>
                     <label htmlFor='category'>
                         <select
                             onChange={onInputChange}
