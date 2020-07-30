@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, {useContext, useEffect, useState} from 'react'
+import {useParams, useHistory, Link} from 'react-router-dom'
+import {RecipeContext} from '../contexts/Context'
 import axios from 'axios'
 import * as yup from 'yup'
 import newRecipe from '../validation/newRecipe'
@@ -6,32 +8,42 @@ import EditRecipeForm from './EditRecipeForm'
 import axiosWithAuth from '../util/axiosWithAuth'
 
 const initialFormValues = {
+  name: '',
+  source: '',
+  category: '',
+  imageURL: ''
+}
+const initialFormErrors = {
     name: '',
     source: '',
     category: '',
     imageURL: ''
   }
-  const initialFormErrors = {
-    name: '',
-    source: '',
-    category: '',
-    imageURL: ''
-  }
+
   const initialDisabled = true
 
 
 const EditRecipe = (props) => {
+
+    
+  const {recipes, addRecipes} = useContext(RecipeContext)  
     const [recipe, setRecipe] = useState([])
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors) 
-    const [disabled, setDisabled] = useState(initialDisabled) 
+    const [disabled, setDisabled] = useState(initialDisabled)
+    const [ingredients, setIngredients] = useState([])
+    const [instructions, setInstructions] = useState([]) 
+    const params = useParams()
+    const history = useHistory()
+    const id = params.id
 
-const postNewRecipe = newRecipe => {
+
+const postNewRecipe = (id) => {
     axiosWithAuth()
-    .post('https://secret-family-recipes-703.herokuapp.com/api/recipes', newRecipe)
+    .put(`/recipes/${id}`)
       .then(res => {
         setRecipe([res.data, ...recipe])
-        setFormValues(initialFormValues)
+        setFormValues('')
         console.log(res.data)
       })
       .catch(err => {
@@ -40,7 +52,17 @@ const postNewRecipe = newRecipe => {
       })
   }
 
-  const inputChange = ( name, value ) => {
+  useEffect(() => {
+    axiosWithAuth()
+    .get(`/recipes/${id}`)
+    .then(res => {
+        setFormValues(res.data.data)
+  })
+  }, [])
+
+  const onInputChange = (event) => {
+    const {name} = event.target
+    const {value} = event.target
     yup
       .reach(newRecipe, name)
       .validate(value)
@@ -62,21 +84,17 @@ const postNewRecipe = newRecipe => {
     })
   }
  
-  useEffect(() => {
-    newRecipe.isValid(formValues).then(valid => {
-      setDisabled(!valid)
-    })
-  }, [formValues])
-
     return (
          <div>
              <EditRecipeForm 
              formErrors={formErrors}
              formValues={formValues}
+             initialFormValues={recipe}
+             onChange={onInputChange}
              disabled={disabled}
-             inputChange={inputChange}
              postNewRecipe={postNewRecipe}
              />
+             
          </div>
     )
 }

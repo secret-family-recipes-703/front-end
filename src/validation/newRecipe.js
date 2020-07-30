@@ -8,11 +8,11 @@ const formSchema = yup.object().shape({
   source: yup
     .string()
     .min(3, "Source must be longer than 3 character")
-    .required("Image source is required"),
+    .required("Source is required"),
   imageURL: yup
-  .string()
-  .url('Must be a valid url'),  
-  category: yup 
+    .string()
+    .url('Must be a valid url'),  
+  category: yup
     .string()
     .oneOf(['Pizza', 'Sandwich', 'Pasta', 'Rice', 'Meat', 'Vegan', 'Festive', 'Breakfast', 'Lunch', 'Dinner', 'Snack'], 'Must choose a valid category')
 })

@@ -42,7 +42,7 @@ const submit = evt => {
                             placeholder='Enter name of recipe'
                             onChange={onInputChange}
                         ></input>
-                    </label>
+                    </label>     
                     <label htmlFor='source'>
                         <input
                             type='text'
@@ -81,6 +81,7 @@ const submit = evt => {
                             <option value='Snack' >Snack</option>
                         </select>
                     </label>
+
 
                     <button onSubmit={submit} id='submitBtn'>Add Recipe</button>
 
