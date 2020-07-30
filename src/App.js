@@ -18,6 +18,14 @@ function App() {
 	const [recipes, addRecipes] = useState([]);
 	const [searchValue, setSearchValue] = useState("");
 
+	useEffect(() => {
+		axiosWithAuth()
+			.get("/recipes")
+			.then((res) => {
+				addRecipes(res.data.data);
+			});
+	}, []);
+
 	return (
 		<Router>
 			<div className="App">
