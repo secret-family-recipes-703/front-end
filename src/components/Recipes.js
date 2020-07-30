@@ -44,38 +44,6 @@ const Recipes = (props) => {
 		props.history.push(`/recipe/${recipe.id}`);
 	}
 
-	useEffect(() => {
-		axiosWithAuth()
-			.get("/recipes")
-			.then((res) => {
-				addRecipes(res.data.data);
-			});
-	}, []);
-
-	useEffect(() => {
-		console.log(searchValue);
-		recipes &&
-			recipes.filter((recipe) => {
-				return (
-					recipe.category.toLowerCase().includes(searchValue.toLowerCase()) ||
-					recipe.name.toLowerCase().includes(searchValue.toLowerCase())
-				);
-			});
-	}, [searchValue]);
-	// 	return (
-	// 		<div className="recipes-container">
-	// 			<a href="/new">Add a New Recipe</a>
-	// 			<ul>
-	// 				{recipes.map((recipe) => (
-	// 					<ul className="recipe-cards">
-	// 						{recipe.name} // {recipe.category} // {recipe.source} <img src={recipe.imageURL} />
-	// 					</ul>
-	// 				))}
-	// 			</ul>
-	// 		</div>
-	// 	);
-	// };
-
 	return (
 		<div>
 			<NavBar />
@@ -83,10 +51,12 @@ const Recipes = (props) => {
 			<RecipesDiv>
 				{recipes &&
 					recipes
-						// .filter((recipe) => {
-						// 	recipe.category.toLowerCase().includes(searchValue.toLowerCase()) ||
-						// 		recipe.name.toLowerCase().includes(searchValue.toLowerCase());
-						// })
+						.filter((recipe) => {
+							return (
+								recipe.category.toLowerCase().includes(searchValue.toLowerCase()) ||
+								recipe.name.toLowerCase().includes(searchValue.toLowerCase())
+							);
+						})
 						.map((recipe) => {
 							return (
 								<Link style={{ textDecoration: "none" }} to={`/recipe/${recipe.id}`}>
