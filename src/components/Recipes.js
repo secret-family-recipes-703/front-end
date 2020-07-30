@@ -45,6 +45,14 @@ const Recipes = (props) => {
 		props.history.push(`/recipe/${recipe.id}`);
 	}
 
+	useEffect(() => {
+    axiosWithAuth()
+    .get('/recipes')
+    .then(res => {
+      addRecipes(res.data.data)
+    })
+  }, [addRecipes])
+
 	// 	return (
 	// 		<div className="recipes-container">
 	// 			<a href="/new">Add a New Recipe</a>

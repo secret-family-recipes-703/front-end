@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import * as yup from "yup";
-import "../App.css";
 import "../Form.css";
 import ChefWoman from "../images/woman-chef-kitchen-home.png";
 import Logo from "../images/SFRLogo.png";
