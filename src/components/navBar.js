@@ -59,7 +59,7 @@ const NavBar = props => {
             { 
             <nav>
                 <NavLink to='/recipes'>
-                <button class='notLast'>Recipes</button>
+                <button className='notLast'>Recipes</button>
                 </NavLink>
                 <NavLink to='/create'>
                 <button>Add recipe</button>

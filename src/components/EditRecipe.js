@@ -1,7 +1,5 @@
-import React, {useContext, useEffect, useState} from 'react'
-import {useParams, useHistory, Link} from 'react-router-dom'
-import {RecipeContext} from '../contexts/Context'
-import axios from 'axios'
+import React, {useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
 import * as yup from 'yup'
 import newRecipe from '../validation/newRecipe'
 import EditRecipeForm from './EditRecipeForm'
@@ -26,15 +24,11 @@ const initialFormErrors = {
 const EditRecipe = (props) => {
 
     
-  const {recipes, addRecipes} = useContext(RecipeContext)  
     const [recipe, setRecipe] = useState([])
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors) 
     const [disabled, setDisabled] = useState(initialDisabled)
-    const [ingredients, setIngredients] = useState([])
-    const [instructions, setInstructions] = useState([]) 
     const params = useParams()
-    const history = useHistory()
     const id = params.id
 
 

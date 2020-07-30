@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
-import axios from 'axios'
 import * as yup from 'yup'
 import newInfo from '../validation/newIngredients'
 import ParentDiv from '../styles/recipeforms'
 import NoteCard from './noteCard'
 import video from '../assets/riceVid.mp4'
-
+import { useHistory, useParams } from 'react-router-dom'
+import NavBar from './navBar'
+import axiosWithAuth from '../util/axiosWithAuth'
 
 const initialFormValues = {ingredients: ''}
 const initialFormErrors = {ingredients: ''}
@@ -17,12 +18,16 @@ const Ingredients = props => {
   const [formErrors, setFormErrors] = useState(initialFormErrors) 
   const [disabled, setDisabled] = useState(initialDisabled) 
   const [list, setList] = useState([])
+  const history = useHistory()
+  const params = useParams()
+  const id = params.id
 
   const postRecipeInfo = (newIngredients) => {
-    axios.post('https://reqres.in/api/users', newIngredients)
+    axiosWithAuth()
+    .post(`/recipes/${id}/ingredients`, newIngredients)
       .then(res => {
         setIngredients([res.data, ...ingredients])
-        setFormValues(initialFormValues)
+        // setFormValues(initialFormValues)
       })
       .catch(err => {
         console.log(err)
@@ -34,6 +39,7 @@ const Ingredients = props => {
         evt.preventDefault()
         const newIngredients = {ingredients: list}
         postRecipeInfo(newIngredients)
+        history.push(`/instructions/${id}`)
       }
     
       const onInputChange = evt => {
@@ -84,7 +90,7 @@ const Ingredients = props => {
 
       return(
         <ParentDiv>
-
+        <NavBar/>
         <form onSubmit={submit}>
         <h2>Add ingredients!</h2>
         <div id='notePad'>
