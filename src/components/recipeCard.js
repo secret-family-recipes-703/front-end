@@ -1,5 +1,5 @@
-import React from 'react'
-import Styled from  'styled-components'
+import React from "react";
+import Styled from "styled-components";
 
 const RecipeDiv = Styled.div`
     max-width: 500px;
@@ -21,19 +21,19 @@ const RecipeDiv = Styled.div`
         border-radius: 20px;
         height: 200px
     }
-`
-const RecipeCard = props => {
-const {recipe} = props
-    return(
-        <RecipeDiv>
-            <div id='image-container'>
-            <img alt="recipe pic" src={recipe.imageURL} />
-            </div>
-            <h2>{recipe.name} </h2>
-            <p>Category: {recipe.category}</p>
-            <p>Source: {recipe.source}</p>
-        </RecipeDiv>
-    )
-}
+`;
+const RecipeCard = (props) => {
+	const { recipe } = props;
+	return (
+		<RecipeDiv>
+			<div id="image-container">
+				<img alt="recipe pic" src={recipe.imageURL} />
+			</div>
+			<h2>{recipe.name} </h2>
+			<p>Category: {recipe.category}</p>
+			<p>Source: {recipe.source}</p>
+		</RecipeDiv>
+	);
+};
 
-export default RecipeCard
+export default RecipeCard;

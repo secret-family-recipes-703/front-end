@@ -4,7 +4,6 @@ import axios from "axios";
 import * as yup from "yup";
 import "../Form.css";
 import ChefWoman from "../images/woman-chef-kitchen-home.png";
-import Logo from "../images/SFRLogo.png";
 import Footer from "./Footer";
 
 const formSchema = yup.object().shape({
