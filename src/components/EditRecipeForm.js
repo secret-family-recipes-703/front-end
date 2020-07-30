@@ -59,7 +59,7 @@ const EditRecipeForm = props => {
     const newRecipe = {
       name: formValues.name.trim(),
       source: formValues.source.trim(),
-      category: formValues.category,
+      category: formValues.category.trim(),
       imageURL: formValues.imageURL
     }
     postNewRecipe(newRecipe)
@@ -108,6 +108,15 @@ const EditRecipeForm = props => {
                             onChange={onInputChange}
                         ></input>
                     </label>
+                    <label htmlFor='category'>
+                        <input
+                            type='text'
+                            name='category'
+                            value={formValues.category}
+                            placeholder={recipe.category}
+                            onChange={onInputChange}
+                        ></input>
+                    </label>
                     <label htmlFor='source'>
                         <input
                             type='text'
@@ -125,17 +134,6 @@ const EditRecipeForm = props => {
                             placeholder={recipe.imageURL}
                             onChange={onInputChange}
                         ></input>
-                    </label>
-                    <label htmlFor='category'>
-                        <select
-                            onChange={onInputChange}
-                            value={formValues.category}
-                            name='category'
-                        >
-                            <option value='' >Food category</option>
-                            <option value='pizza' >Pizza</option>
-                            <option value='lame' >Not pizza</option>
-                        </select>
                     </label>
 
                     <button onSubmit={submit} id='submitBtn'>Add Recipe</button>
